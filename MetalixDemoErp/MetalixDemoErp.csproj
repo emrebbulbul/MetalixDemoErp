@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Entitiy\" />
+  </ItemGroup>
+
 </Project>
