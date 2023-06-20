@@ -20,7 +20,8 @@ namespace BusinessLayer.Operations.Implementations
 
         public List<Company> GetList()
         {
-            throw new NotImplementedException();
+            List<Company> companyList = new List<Company>();
+            return companyList;
         }
 
         public void TAdd(Company t)

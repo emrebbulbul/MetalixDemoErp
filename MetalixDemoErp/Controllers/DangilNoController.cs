@@ -1,13 +1,14 @@
 ﻿using BusinessLayer.Operations.Implementations;
+using BusinessLayer.Operations.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MetalixDemoErp.Controllers
 {
     public class DangilNoController : Controller
     {
-        private readonly DangilNoOperations _dangilNoOperations;
+        private readonly IDangilNoOperations _dangilNoOperations;
 
-        public DangilNoController(DangilNoOperations dangilNoOperations)
+        public DangilNoController(IDangilNoOperations dangilNoOperations)
         {
             _dangilNoOperations = dangilNoOperations;
         }
