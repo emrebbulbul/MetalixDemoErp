@@ -20,8 +20,7 @@ namespace BusinessLayer.Operations.Implementations
 
         public List<Company> GetList()
         {
-            List<Company> companyList = new List<Company>();
-            return companyList;
+            return _companyRepository.GetListAll();
         }
 
         public void TAdd(Company t)

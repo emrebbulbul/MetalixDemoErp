@@ -20,7 +20,7 @@ namespace BusinessLayer.Operations.Implementations
 
         public List<DangilNo> GetList()
         {
-            throw new NotImplementedException();
+            return _dangilNoRepository.GetListAll();
         }
 
         public void TAdd(DangilNo t)
