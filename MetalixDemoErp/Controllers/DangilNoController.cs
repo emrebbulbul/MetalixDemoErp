@@ -6,17 +6,20 @@ namespace MetalixDemoErp.Controllers
 {
     public class DangilNoController : Controller
     {
+        private readonly ICompanyOperations _companyOperations;
         private readonly IDangilNoOperations _dangilNoOperations;
 
-        public DangilNoController(IDangilNoOperations dangilNoOperations)
+        public DangilNoController(ICompanyOperations companyOperations, IDangilNoOperations dangilNoOperations)
         {
+            _companyOperations = companyOperations;
             _dangilNoOperations = dangilNoOperations;
         }
+        
 
         public IActionResult Index()
         {
-            //var values = _dangilNoOperations.GetList();
-            return View();
+            var values = _companyOperations.GetList();
+            return View(values);
         }
     }
 }
