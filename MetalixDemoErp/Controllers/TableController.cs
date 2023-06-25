@@ -20,7 +20,7 @@ namespace MetalixDemoErp.Controllers
        
         public IActionResult Index()
         {
-            var values = _dangilNoOperations.GetList();
+            var values = _companyOperations.GetList();
             return View(values);
         }
     }
