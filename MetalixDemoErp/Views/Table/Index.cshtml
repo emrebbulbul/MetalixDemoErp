@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="../Tema/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../Tema/assets/img/favicon.png">
-    <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/form-div.css">
+    <link rel="stylesheet" href="~/Tema/assets/css/form-div.css">
     <title>
         Material Dashboard 2 by Creative Tim
     </title>
@@ -225,7 +225,31 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        
+        <div style="display: flex; justify-content: center; align-items: center;  background-color:lightgrey; height: max-content; margin-top: 50px; margin-left:-50px;">
+            <div style="max-width: 500px; width: 100%; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                @using (Html.BeginForm("Index", "Table", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        <label for="CompanyCity" style="color:#212123">Şirket Şehri</label>
+                        <br/>
+                        @Html.TextBoxFor(model => model.CompanyCity, new { @class = "form-company-input" })
+                    </div>
+
+                    <br />
+                    <div class="form-group">
+                        <label for="CompanyName" style="color:#212123">Şirket Adı</label>
+                        <br />
+                        @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-company-input" })
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                }
+            </div>
+        </div>
+
+
     </main>
     <div class="fixed-plugin">
         <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -301,24 +325,11 @@
             </div>
         </div>
 
-
        
 
     </div>
-    <div class="form-company">
-        <form>
-            @using (Html.BeginForm("Index", "Table", FormMethod.Post))
-            {
-                @Html.LabelFor(x => x.CompanyCity)
-                @Html.TextBoxFor(x => x.CompanyCity, new { @class = "form-control" })
-                <br />
-                @Html.LabelFor(x => x.CompanyName)
-                @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
-                <br />
-                <button class="btn btn-info">Yazıyı Kaydet</button>
-            }
-        </form>
-    </div>
+   
+
 
        
     

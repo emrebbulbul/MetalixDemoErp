@@ -28,7 +28,7 @@ namespace MetalixDemoErp.Controllers
         [HttpPost]
         public IActionResult Index(Company t)
         {
-            t.CompanyId = 5;
+           
             _companyOperations.TAdd(t);
             return RedirectToAction("Index","Company");
         }

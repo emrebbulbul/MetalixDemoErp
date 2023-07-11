@@ -40,7 +40,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CompanyId");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Companies", (string)null);
                 });
 
             modelBuilder.Entity("MetalixDemoErp.Entitiy.DangilNo", b =>
@@ -64,7 +64,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.ToTable("DangilNoes");
+                    b.ToTable("DangilNoes", (string)null);
                 });
 
             modelBuilder.Entity("MetalixDemoErp.Entitiy.DangilNo", b =>
