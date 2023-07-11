@@ -10,5 +10,6 @@ namespace DataAccessLayer.Repositories.Interfaces
 {
     public interface IDangilNoRepository : IBaseRepository<DangilNo>
     {
+        List<DangilNo> GetListWithDangil();
     }
 }

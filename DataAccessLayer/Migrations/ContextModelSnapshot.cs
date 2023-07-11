@@ -51,7 +51,7 @@ namespace DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DangilId"));
 
-                    b.Property<int?>("CompanyId")
+                    b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<int>("Dangilno")
@@ -69,9 +69,13 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("MetalixDemoErp.Entitiy.DangilNo", b =>
                 {
-                    b.HasOne("MetalixDemoErp.Entitiy.Company", null)
+                    b.HasOne("MetalixDemoErp.Entitiy.Company", "Company")
                         .WithMany("DangilNo")
-                        .HasForeignKey("CompanyId");
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
                 });
 
             modelBuilder.Entity("MetalixDemoErp.Entitiy.Company", b =>

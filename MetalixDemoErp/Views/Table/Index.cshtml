@@ -1,21 +1,10 @@
-﻿@{
+﻿@model MetalixDemoErp.Entitiy.Company
+@{
+
     ViewData["Title"] = "Index";
-    //Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-<!--
-=========================================================
-* Material Dashboard 2 - v3.1.0
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="../Tema/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../Tema/assets/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/form-div.css">
     <title>
         Material Dashboard 2 by Creative Tim
     </title>
@@ -310,27 +300,28 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div>
+
+
+       
 
     </div>
-    <center>
-        <form class="form-check-input">
-
-            Kullanıcı: <input type="text" name="username" class="form">
-
-            <br>
-
-            Parola: <input type="password" name="password" class="form">
-            <br>
-            
-            <button class="figure-img"
-                    type="button">
-                Ekle
-            </button>
-
+    <div class="form-company">
+        <form>
+            @using (Html.BeginForm("Index", "Table", FormMethod.Post))
+            {
+                @Html.LabelFor(x => x.CompanyCity)
+                @Html.TextBoxFor(x => x.CompanyCity, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(x => x.CompanyName)
+                @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+                <br />
+                <button class="btn btn-info">Yazıyı Kaydet</button>
+            }
         </form>
-    </center>
+    </div>
+
+       
+    
     <!--   Core JS Files   -->
     <script src="../Tema/assets/js/core/popper.min.js"></script>
     <script src="../Tema/assets/js/core/bootstrap.min.js"></script>

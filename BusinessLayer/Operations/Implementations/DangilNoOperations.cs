@@ -18,6 +18,11 @@ namespace BusinessLayer.Operations.Implementations
             _dangilNoRepository = dangilNoRepository;
         }
 
+        public List<DangilNo> GetCompanyListWithDangil()
+        {
+            return _dangilNoRepository.GetListWithDangil();
+        }
+
         public List<DangilNo> GetList()
         {
             return _dangilNoRepository.GetListAll();

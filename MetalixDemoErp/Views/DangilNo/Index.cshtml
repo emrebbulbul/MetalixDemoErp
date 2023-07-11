@@ -1,5 +1,5 @@
 ﻿@using MetalixDemoErp.Entitiy
-@model List<Company>
+@model List<DangilNo>
 @{
     Layout = null;
     //Layout = "~/Views/Shared/_UserLayout.cshtml";
@@ -268,20 +268,20 @@
                                                         <img src="../Tema/assets/img/indir.jfif" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                                                     </div>
                                                     <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">@item.CompanyName</h6>
+                                                            <h6 class="mb-0 text-sm">@item.Company.CompanyName</h6>
                                                         
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>
-                                                    <p class="text-xs font-weight-bold mb-0">@item.CompanyCity</p>
+                                                    <p class="text-xs font-weight-bold mb-0">@item.Company.CompanyCity</p>
                                                  
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-success">Aktif</span>
+                                                <span class="badge badge-sm bg-gradient-success">@item.Dangilno</span>
                                             </td>
                                             <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold">01.01.2023</span>
+                                                <span class="text-secondary text-xs font-weight-bold">@item.DateTime</span>
                                             </td>
                                             <td class="align-middle">
                                                 <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">

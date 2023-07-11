@@ -12,5 +12,7 @@ namespace MetalixDemoErp.Entitiy
 
         public List<DangilNo> DangilNo { get; set; }
 
+       
+
     }
 }

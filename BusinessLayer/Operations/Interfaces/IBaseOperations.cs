@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetalixDemoErp.Entitiy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,7 @@ namespace BusinessLayer.Operations.Interfaces
         void TUpdate(TSource t);
         List<TSource> GetList();
         TSource TGetById(int id);
+
+       
     }
 }

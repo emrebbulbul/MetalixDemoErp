@@ -9,6 +9,6 @@ namespace BusinessLayer.Operations.Interfaces
 {
     public interface IDangilNoOperations : IBaseOperations<DangilNo>
     {
-
+        List<DangilNo> GetCompanyListWithDangil();
     }
 }

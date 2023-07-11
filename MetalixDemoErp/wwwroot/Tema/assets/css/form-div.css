@@ -1,0 +1,9 @@
+﻿
+.form-company {
+    margin-left: 37.5%;
+    width: 25%;
+    margin-right: 37.5%;
+    height: max-content;
+    display: flex;
+    margin-top: -40%;
+}

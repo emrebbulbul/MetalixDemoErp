@@ -2,6 +2,7 @@
 using BusinessLayer.Operations.Interfaces;
 using DataAccessLayer.Repositories.Implementations;
 using DataAccessLayer.Repositories.Interfaces;
+using MetalixDemoErp.Entitiy;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MetalixDemoErp.Controllers
@@ -10,18 +11,28 @@ namespace MetalixDemoErp.Controllers
     {
         private readonly ICompanyOperations _companyOperations;
         private readonly IDangilNoOperations _dangilNoOperations;
+       
 
         public TableController(ICompanyOperations companyOperations, IDangilNoOperations dangilNoOperations)
         {
             
             _companyOperations = companyOperations;
             _dangilNoOperations = dangilNoOperations;
+            
         }
-       
+        [HttpGet]
         public IActionResult Index()
         {
-            var values = _companyOperations.GetList();
-            return View(values);
+            return View();
         }
+        [HttpPost]
+        public IActionResult Index(Company t)
+        {
+            t.CompanyId = 5;
+            _companyOperations.TAdd(t);
+            return RedirectToAction("Index","Company");
+        }
+
+       
     }
 }

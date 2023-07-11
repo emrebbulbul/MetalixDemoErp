@@ -12,11 +12,15 @@ namespace BusinessLayer.Operations.Implementations
     public class CompanyOperations : ICompanyOperations
     {
       private readonly  ICompanyRepository _companyRepository;
+      
 
-        public CompanyOperations(ICompanyRepository companyRepository)
+        public CompanyOperations(ICompanyRepository companyRepository )
         {
             _companyRepository = companyRepository;
+           
         }
+
+      
 
         public List<Company> GetList()
         {
@@ -25,7 +29,7 @@ namespace BusinessLayer.Operations.Implementations
 
         public void TAdd(Company t)
         {
-            throw new NotImplementedException();
+            _companyRepository.Insert(t);
         }
 
         public void TDelete(Company t)
@@ -35,7 +39,7 @@ namespace BusinessLayer.Operations.Implementations
 
         public Company TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _companyRepository.GetById(id);
         }
 
         public void TUpdate(Company t)

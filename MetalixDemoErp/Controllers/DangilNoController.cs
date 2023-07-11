@@ -18,7 +18,7 @@ namespace MetalixDemoErp.Controllers
 
         public IActionResult Index()
         {
-            var values = _companyOperations.GetList();
+            var values = _dangilNoOperations.GetCompanyListWithDangil();
             return View(values);
         }
     }

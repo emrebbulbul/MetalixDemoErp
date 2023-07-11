@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\Tema\assets\css\form-div.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\Tema\.github\workflows\main.yml" />
     <None Include="wwwroot\Tema\assets\css\material-dashboard.css.map" />
     <None Include="wwwroot\Tema\assets\fonts\nucleo-icons.svg" />
@@ -241,6 +245,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cryptography.Internal" Version="7.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="7.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.7" />
